@@ -81,7 +81,7 @@ export default function Home() {
             <p className={styles.frame4desc}>
               Dive into our interactive lessons, videos, and cultural resources
             </p>
-            <p className={styles.frame4desc}>Monitor your child's learning journey and track their Progress </p>
+            <p className={styles.frame4desc}>Monitor your child&apos;s learning journey and track their Progress </p>
           </div>
           <div className={styles.frame4item}>
             <Image src={Guide} alt="" className={styles.frame4img} />
