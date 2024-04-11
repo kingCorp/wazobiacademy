@@ -6,7 +6,7 @@ import Interact from "../../public/interact@3x.png";
 import Dance from "../../public/dance@3x.png";
 import PlayRead from "../../public/PlayRead@3x.png";
 import Guide from "../../public/Guide@3x.png";
-import Jungle from "../../public/Jungle@3x.png";
+import Jungle from "../../public/jungle@3x.png";
 import Bookstar from "../../public/bookstar@3x.png";
 import Animal from "../../public/animalpet@3x.png";
 import Link from "next/link";
