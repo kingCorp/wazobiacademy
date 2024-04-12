@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 import { getProviders, signIn, useSession } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { Suspense } from 'react'
+
 
 
 const Login = () => {
@@ -39,7 +39,6 @@ const Login = () => {
   };
 
   return (
-    <Suspense>
       <div className={styles.container}>
 
 
@@ -92,7 +91,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </Suspense>
   );
 };
 
