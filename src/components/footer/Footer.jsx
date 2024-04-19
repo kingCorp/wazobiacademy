@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./footer.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import Logowhite from "@/assets/svgs/logowhite.svg"
+import Logowhite from "../../../public/svgs/logowhite.svg"
 
 const Footer = () => {
   return (

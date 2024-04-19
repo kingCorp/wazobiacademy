@@ -7,8 +7,8 @@ import { signOut, useSession } from "next-auth/react";
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import Logo from "@/assets/svgs/logo.svg"
-import Cloudown from "@/assets/svgs/clouddown.png"
+import Logo from "../../../public/svgs/logo.svg"
+// import Cloudown from "@/assets/svgs/clouddown.png"
 import React from 'react'
 import Image from "next/image";
 

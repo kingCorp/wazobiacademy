@@ -5,17 +5,17 @@ import { getProviders, signIn, useSession } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import Choose from "@/assets/svgs/choose.svg";
-import AddchildImage from "@/assets/svgs/addchild.svg";
-import Congratschild from "@/assets/svgs/congratsaddchild.svg";
-import Child1 from "@/assets/svgs/child1.svg";
-import Child2 from "@/assets/svgs/child2.svg";
-import Child3 from "@/assets/svgs/child3.svg";
-import Child4 from "@/assets/svgs/child4.svg";
-import Planet from "@/assets/svgs/planet.svg";
-import Dino from "@/assets/svgs/dino.svg";
-import Rocket from "@/assets/svgs/rocket.svg";
-import Rainbow from "@/assets/svgs/rainbow.svg";
+import Choose from "../../../../public/svgs/choose.svg";
+import AddchildImage from "../../../../public/svgs/addchild.svg";
+import Congratschild from "../../../../public/svgs/congratsaddchild.svg";
+import Child1 from "../../../../public/svgs/child1.svg";
+import Child2 from "../../../../public/svgs/child2.svg";
+import Child3 from "../../../../public/svgs/child3.svg";
+import Child4 from "../../../../public/svgs/child4.svg";
+import Planet from "../../../../public/svgs/planet.svg";
+import Dino from "../../../../public/svgs/dino.svg";
+import Rocket from "../../../../public/svgs/rocket.svg";
+import Rainbow from "../../../../public/svgs/rainbow.svg";
 
 
 

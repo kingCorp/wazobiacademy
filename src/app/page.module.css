@@ -1,6 +1,6 @@
 .frame1container {
   background-color: #009B77;
-  background-image: url('../assets/svgs/HERO.svg');
+  background-image: url('../../public/svgs/HERO.svg');
 }
 
 .img {

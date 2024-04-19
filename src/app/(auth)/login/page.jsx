@@ -5,7 +5,7 @@ import { getProviders, signIn, useSession } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import SignupImage from "@/assets/images/signup@3x.png";
+import SignupImage from "../../../../public/images/signup@3x.png";
 
 
 

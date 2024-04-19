@@ -5,18 +5,18 @@ import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import Link from 'next/link';
 import Image from 'next/image';
-import Landing from "@/assets/svgs/land1.svg";
-import Learn from "@/assets/svgs/learn.svg";
-import Interact from "@/assets/svgs/interact.svg";
-import Dance from "@/assets/svgs/dance.svg";
-import Playread from "@/assets/svgs/playread.svg";
-import Guide from "@/assets/svgs/guide.svg";
-import Jungle from "@/assets/svgs/jungle.svg";
+import Landing from "../../public/svgs/land1.svg";
+import Learn from "../../public/svgs/learn.svg";
+import Interact from "../../public/svgs/interact.svg";
+import Dance from "../../public/svgs/dance.svg";
+import Playread from "../../public/svgs/playread.svg";
+import Guide from "../../public/svgs/guide.svg";
+import Jungle from "../../public/svgs/jungle.svg";
 import Lottie from "lottie-react";
-import rabbitani from "@/assets/lottie/Rabbit.json"
-import booksani from "@/assets/lottie/Book.json";
-import saanuani from "@/assets/lottie/Saanu.json"
-import ekaroani from "@/assets/lottie/Ekaaro.json"
+import rabbitani from "../../public/lottie/Rabbit.json"
+import booksani from "../../public/lottie/Book.json";
+import saanuani from "../../public/lottie/Saanu.json"
+import ekaroani from "../../public/lottie/Ekaaro.json"
 
 
 
@@ -35,7 +35,7 @@ export default function Home() {
               Welcome to WazobiAcademy where Every Lesson is an Adventure
             </p>
             <div className='mt-4'>
-              <Link style={{ color: '#009B77' }} className="text-xl font-medium rounded-xl p-4 px-12 bg-white " href="/login">Start Exploring</Link>
+              <Link style={{ color: '#009B77' }} className="text-xl font-semibold rounded-xl p-4 px-12 bg-white " href="/login">Start Exploring</Link>
             </div>
           </div>
           <div>
@@ -50,7 +50,7 @@ export default function Home() {
 
       <div className='max-w-screen-xl mx-auto relative bg-white flex justify-between isolate px-6 py-8 lg:py-16'>
         <div className="flex flex-col items-center">
-          <h1 className="text-center lg:text-5xl text-3xlfont-bold">
+          <h1 className="text-center lg:text-5xl text-3xl font-bold">
             Unlock a Universe of Knowledge
           </h1>
           <p className="text-center text-2xl mt-4">

@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
-import SignupImage from "@/assets/images/signup@3x.png";
-import Googleicon from "@/assets/svgs/googleicon.svg";
+import SignupImage from "../../../../public/images/signup@3x.png";
+import Googleicon from "../../../../public/svgs/googleicon.svg";
 import { useRouter } from "next/navigation";
 import { getProviders, signIn, useSession } from "next-auth/react";
 

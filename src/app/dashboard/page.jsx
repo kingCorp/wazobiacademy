@@ -5,13 +5,13 @@ import useSWR from "swr";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import Notification from "@/assets/svgs/notification.svg";
-import Settings from "@/assets/svgs/setting.svg"
-import Searchicon from "@/assets/svgs/search-icon.svg"
-import Trend from "@/assets/svgs/trend.svg"
-import Homeicon from "@/assets/svgs/Home.svg"
-import Languageicon from "@/assets/svgs/LanguageSkill.svg"
-import Reporticon from "@/assets/svgs/report.svg"
+import Notification from "../../../public/svgs/notification.svg";
+import Settings from "../../../public/svgs/setting.svg"
+import Searchicon from "../../../public/svgs/search-icon.svg"
+import Trend from "../../../public/svgs/trend.svg"
+import Homeicon from "../../../public/svgs/Home.svg"
+import Languageicon from "../../../public/svgs/LanguageSkill.svg"
+import Reporticon from "../../../public/svgs/report.svg"
 
 const Dashboard = () => {
 
