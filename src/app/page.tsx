@@ -9,7 +9,7 @@ import Landing from "@/assets/svgs/land1.svg";
 import Learn from "@/assets/svgs/learn.svg";
 import Interact from "@/assets/svgs/interact.svg";
 import Dance from "@/assets/svgs/dance.svg";
-import PlayRead from "@/assets/svgs/playread.svg";
+import Playread from "@/assets/svgs/playread.svg";
 import Guide from "@/assets/svgs/guide.svg";
 import Jungle from "@/assets/svgs/jungle.svg";
 import Lottie from "lottie-react";
@@ -77,7 +77,7 @@ export default function Home() {
       </div>
 
       <div className='relative isolate my-12'>
-        <Image src={PlayRead} alt="" className="object-cover h-40 w-full" />
+        <Image src={Playread} alt="" className="object-cover h-40 w-full" />
       </div>
 
       <div className='max-w-screen-xl mx-auto relative bg-white flex justify-between isolate px-6 py-8 gap-x-6 lg:py-16'>
