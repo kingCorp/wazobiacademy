@@ -1,52 +1,9 @@
-.container {
-  height: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  max-width: 1366px
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 32px;
-  color: #00594C;
-}
-
-.links {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
 .login {
-  padding: 12px 24px 12px 24px;
   border: 2px solid #009B77;
-  background-color: #fff;
   color: #009B77;
-  cursor: pointer;
-  border-radius: 20px;
 }
 
 .register {
-  padding: 12px 24px 12px 24px;
-  border: none;
   background-color: #009B77;
   color: white;
-  cursor: pointer;
-  border-radius: 20px;
-}
-
-.logout {
-  padding: 12px 24px 12px 24px;
-  border: none;
-  background-color: #53c28b;
-  color: white;
-  cursor: pointer;
-  border-radius: 3px;
-}
-
-.link{
-  font-size: 24px;
-  font-weight: 400;
 }

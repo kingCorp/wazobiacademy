@@ -3,6 +3,9 @@ import { Raleway } from "next/font/google";
 import { ThemeProvider } from "@/context/ThemeContext";
 import AuthProvider from "@/components/AuthProvider/AuthProvider";
 import { Suspense } from 'react'
+import Image from "next/image";
+import Bg from "../../public/bg.svg";
+
 
 const inter = Raleway({
   subsets: ["latin"],
@@ -21,7 +24,7 @@ export default function RootLayout({ children }) {
         <Suspense>
           <ThemeProvider>
             <AuthProvider>
-              <div className="container">
+              <div>
                 {children}
               </div>
             </AuthProvider>
