@@ -59,18 +59,18 @@ export default function Home() {
           <div className="flex flex-col justify-between items-center gap-x-8 mt-12 lg:flex-row">
             <div className="items-center justify-center py-2">
               <Image src={Interact} alt="" className="object-cover w-full h-72 rounded-2xl" />
-              <p className={styles.frame2cardtitle}>Interactive Learning</p>
-              <p className={styles.frame2carddesc}>Discover the beauty of Nigerian languages.</p>
+              <p className="text-center text-2xl font-bold my-4">Interactive Learning</p>
+              <p className="text-center text-lg">Discover the beauty of Nigerian languages.</p>
             </div>
             <div className="items-center justify-center py-2">
               <Image src={Dance} alt="" className="object-cover w-full h-72 rounded-2xl" />
-              <p className={styles.frame2cardtitle}>Musical Journey</p>
-              <p className={styles.frame2carddesc}>Experience the rhythmic beats and melodies of Nigerian music.</p>
+              <p className="text-center text-2xl font-bold my-4">Musical Journey</p>
+              <p className="text-center text-lg">Experience the rhythmic beats and melodies of Nigerian music.</p>
             </div>
             <div className="items-center justify-center py-2">
               <Image src={Learn} alt="" className="object-cover w-full h-72 rounded-2xl" />
-              <p className={styles.frame2cardtitle}>Cultural Understanding</p>
-              <p className={styles.frame2carddesc}>Immerse yourself in the enchanting world of Nigerian folklore.</p>
+              <p className="text-center text-2xl font-bold my-4">Cultural Understanding</p>
+              <p className="text-center text-lg">Immerse yourself in the enchanting world of Nigerian folklore.</p>
             </div>
           </div>
         </div>
