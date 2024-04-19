@@ -9,7 +9,7 @@ import Landing from "@/assets/svgs/land1.svg";
 import Learn from "@/assets/svgs/learn.svg";
 import Interact from "@/assets/svgs/interact.svg";
 import Dance from "@/assets/svgs/dance.svg";
-import PlayRead from "@/assets/svgs/PlayRead.svg";
+import PlayRead from "@/assets/svgs/playread.svg";
 import Guide from "@/assets/svgs/guide.svg";
 import Jungle from "@/assets/svgs/jungle.svg";
 import Lottie from "lottie-react";
