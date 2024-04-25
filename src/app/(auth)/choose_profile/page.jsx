@@ -1,164 +1,123 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import styles from "./page.module.css";
-import { getProviders, signIn, useSession } from "next-auth/react";
-import { useRouter, useSearchParams } from "next/navigation";
-import Link from "next/link";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
-import Choose from "../../../../public/svgs/choose.svg";
-import AddchildImage from "../../../../public/svgs/addchild.svg";
-import Congratschild from "../../../../public/svgs/congratsaddchild.svg";
-import Child1 from "../../../../public/svgs/child1.svg";
-import Child2 from "../../../../public/svgs/child2.svg";
-import Child3 from "../../../../public/svgs/child3.svg";
-import Child4 from "../../../../public/svgs/child4.svg";
 import Planet from "../../../../public/svgs/planet.svg";
 import Dino from "../../../../public/svgs/dino.svg";
 import Rocket from "../../../../public/svgs/rocket.svg";
 import Rainbow from "../../../../public/svgs/rainbow.svg";
+import Plus from "../../../../public/svgs/Plus.svg";
+import { Button, Checkbox, Label, Modal, TextInput } from "flowbite-react";
 
-
-
-const Login = () => {
+const children = [];
+const ChooseProfile = () => {
   const session = useSession();
   const router = useRouter();
-  const params = useSearchParams();
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
-  const [congrats, setCongrats] = useState(null)
-  const [addChild, setAddchild] = useState(null)
-
-
-  // useEffect(() => {
-  //   setError(params.get("error"));
-  //   setSuccess(params.get("success"));
-  // }, [params]);
-
+  const [openModal, setOpenModal] = useState(false);
+  const [name, setName] = useState("");
+  const [dob, setDob] = useState("2018-04-18");
   // if (session.status === "loading") {
   //   return <p>Loading...</p>;
   // }
 
-  // if (session.status === "authenticated") {
-  //   router?.push("/dashboard");
+  // if (session.status === "unauthenticated") {
+  //   router?.push("/dashboard/login");
   // }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleProfile = () => {
     router?.push("/dashboard");
-    // const email = e.target[0].value;
-    // const password = e.target[1].value;
-
-    // signIn("credentials", {
-    //   email,
-    //   password,
-    // });
   };
 
+  const handleAddChild = useCallback(() => {
+    children.push({
+      name,
+      dob,
+    });
+    setOpenModal(false);
+    setName("");
+    setDob("");
+  }, [name, dob]);
+
+  function onCloseModal() {
+    setOpenModal(false);
+    setName("");
+    setDob("");
+  }
+
+  console.log(children, name, dob);
+
   return (
-
-    <div className={styles.container}>
-      <div className={styles.bodycontainer}>
-        <div style={{ backgroundColor: '#F5F5F5' }}>
-          <div className={styles.body1}>
-            <div className={styles.imgcont}>
-              {!addChild && !congrats && (
-                <Image
-                  src={Choose}
-                  height={500}
-                  width={300}
-                />
-              )}
-              {addChild && (
-                <Image
-                  src={AddchildImage}
-                  height={500}
-                  width={300}
-                />
-              )}
-              {congrats && (
-                <Image
-                  src={Congratschild}
-                  height={500}
-                  width={300}
-                />
-              )}
+    <div className="h-screen flex flex-col justify-center items-center">
+      <div className="bg-white flex flex-col items-center justify-center lg:shadow lg:w-4/5 lg:h-4/5 p-4">
+        <p className="text-3xl font-semibold my-8">Who is Learning</p>
+        <p className="text-xl font-medium my-4 text-center">
+          Select Who is Learning at the moment
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-16 my-16">
+          {children.map((child, index) => (
+            <div onClick={handleProfile} key={index}>
+              <div className="rounded-full bg-green-600 w-28 h-28 flex justify-center items-center">
+                <p className="text-white text-8xl font-normal">
+                  {child.name.charAt(0).toUpperCase()}
+                </p>
+              </div>
+              <p className="text-xl my-2 text-center">{child.name}</p>
             </div>
+          ))}
+          <div>
+            <button
+              onClick={() => setOpenModal(true)}
+              className={`p-6 rounded-3xl ${styles.myaddbtn}`}
+            >
+              <Image src={Plus} height={55} width={55} />
+            </button>
+            <p className="text-xl my-2 text-center">Add profile</p>
           </div>
-        </div>
-        <div style={{ backgroundColor: '#FFF', display: 'flex' }}>
-          <div className={styles.body}>
-            {!addChild && !congrats && (
-              <div>
-                <div className={styles.avatarcont}>
-                  <Image
-                    src={Child1}
-                    height={100}
-                    width={100}
-                  />
-                  <Image
-                    src={Child2}
-                    height={100}
-                    width={100}
-                  />
-                  <Image
-                    src={Child3}
-                    height={100}
-                    width={100}
-                  />
-                  <Image
-                    src={Child4}
-                    height={100}
-                    width={100}
-                  />
-                </div>
-                <div className={styles.semibody}>
-                  <p className={styles.title}>Who is Learning</p>
-                  <p className={styles.subtitle}>Create a profile for each child.</p>
-                  <button className={styles.button} onClick={() => setAddchild(true)}>Add profile</button>
-                </div>
-              </div>
-            )}
-
-            {addChild && (
-              <div className={styles.semibody}>
-                <p className={styles.title}>{"Enter the child’s details"}</p>
-                <div className={styles.formbodykids}>
-                  <label htmlFor="email">Email</label>
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    required
-                    className={styles.input}
-                  />
-                  <label htmlFor="password">Date of birth</label>
-                  <input
-                    type="date"
-                    placeholder="01 - 01 - 20012"
-                    required
-                    className={styles.input}
-                  />
-                </div>
-                <button className={styles.button} onClick={() => {
-                  setCongrats(true);
-                  setAddchild(false);
-                }}>Continue</button>
-              </div>
-            )}
-
-            {congrats && (
-              <div className={styles.semibody}>
-                <div className={styles.bigdot}></div>
-                <p className={styles.title} style={{ textAlign: 'center' }}>Congratulations</p>
-                <p className={styles.subtitle} style={{ textAlign: 'center', width: '50%' }}>{"Your child’s profile has been set up successfully. Click continue and start learning."}</p>
-                <button className={styles.button} onClick={() => router?.push("/dashboard")}>Continue</button>
-              </div>
-            )}
-          </div>
-
         </div>
       </div>
+      <Modal
+        show={openModal}
+        size="md"
+        onClose={onCloseModal}
+        popup
+        dismissible
+      >
+        <Modal.Header />
+        <Modal.Body>
+          <div className="flex flex-col">
+            <p className="text-2xl font-bold text-center">
+              {"Enter the child’s details"}
+            </p>
+            <div className="flex flex-col gap-4 my-8">
+              <label htmlFor="email">Name</label>
+              <input
+                type="text"
+                placeholder="Enter child name"
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+                required
+                className="p-3 bg-transparent border border-slate-400 rounded-lg"
+              />
+              <label htmlFor="password">Date of Birth</label>
+              <input
+                type="date"
+                placeholder="20-04-2018"
+                value={dob}
+                onChange={(event) => setDob(event.target.value)}
+                required
+                className="p-3 bg-transparent border border-slate-400 rounded-lg"
+              />
+              <button onClick={handleAddChild} className={styles.button}>
+                Continue
+              </button>
+            </div>
+          </div>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 };
 
-export default Login;
+export default ChooseProfile;

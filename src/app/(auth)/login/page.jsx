@@ -6,9 +6,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import SignupImage from "../../../../public/images/signup@3x.png";
-
-
-
+import Logo from "../../../../public/svgs/logo.svg";
+import Googleicon from "../../../../public/svgs/googleicon.svg";
 
 const Login = () => {
   const session = useSession();
@@ -43,9 +42,8 @@ const Login = () => {
   };
 
   return (
-
-    <div className={styles.container}>
-      <div className={styles.body1}>
+    <div className="block lg:flex xl:flex 2xl:flex justify-center items-center h-screen">
+      <div className="h-screen w-screen hidden lg:block xl:block">
         <Image
           src={SignupImage}
           layout="fill"
@@ -54,32 +52,52 @@ const Login = () => {
           className={styles.signupimg}
         />
       </div>
-      <div className={styles.body}>
-        <div className={styles.semibody}>
-          <p className={styles.title}>{success ? success : "Welcome Back"}</p>
-          <p className={styles.subtitle}>Please sign in to see the dashboard.</p>
-          <form onSubmit={handleSubmit} className={styles.form}>
+      <div className="flex flex-col items-center justify-center h-screen w-screen">
+        <Image
+          src={Logo}
+          alt=""
+          className="h-12 w-auto lg:hidden self-center my-8"
+        />
+        <div className="mx-4 px-8">
+          <p className="text-3xl font-bold">
+            {success ? success : "Welcome Back"}
+          </p>
+          <p className="text-lg font-normal my-8">
+            Please sign in to see the dashboard.
+          </p>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-2">
             <label htmlFor="email">Email</label>
             <input
               type="email"
               placeholder="Email"
               required
-              className={styles.input}
+              className="p-3 bg-transparent border border-slate-400 rounded-lg"
             />
             <label htmlFor="password">Password</label>
             <input
               type="password"
               placeholder="Password"
               required
-              className={styles.input}
+              className="p-3 bg-transparent border border-slate-400 rounded-lg"
             />
-            <button className={styles.button}>Sign in</button>
+            <button className={styles.button}>Get Started</button>
             {error && "Something went wrong!"}
           </form>
-          <p className={styles.or}>- or -</p>
+          {/* <button
+            onClick={() => {
+              signIn("google");
+            }}
+            className={styles.button2}
+          >
+            <Image
+              src={Googleicon}
+              style={{ width: 25, height: 25, marginRight: "20px" }}
+            />
+            Sign in with Google
+          </button> */}
         </div>
-        <Link className={styles.loginlink} href="/register">
-          Create a account <span style={{ color: '#009B77' }}>Signup</span>
+        <Link className="text-base items-center py-8" href="/register">
+          {"Don't have an account? "}  <span style={{ color: "#009B77" }}>Signup</span>
         </Link>
       </div>
     </div>
